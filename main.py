@@ -123,8 +123,9 @@ def get_teachers_markup():
     btn4 = types.InlineKeyboardButton("Нұрасыл ағай", callback_data="teacher4")
     btn5 = types.InlineKeyboardButton("Жасұлан ағай", callback_data="teacher5")
     btn6 = types.InlineKeyboardButton("Ботагөз апай", callback_data="teacher6")
+    btn7 = types.InlineKeyboardButton("НТ ГУГЛ ДИСК", callback_data="teacher7")
     back = types.InlineKeyboardButton("⬅ Кері қайту", callback_data="back")
-    markup.add(btn1, btn2, btn3, btn4, btn5, btn6, back)
+    markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, back)
     return markup
 
 # Словарь с ссылками для преподавателей
@@ -134,7 +135,8 @@ teacher_links = {
     "teacher3": "Мират ағай : https://docs.google.com/document/d/147EDLYZM84hAxQwaqX2f4KmBARhC4Q5uCeWnVcHdys4/edit?usp=drivesdk",
     "teacher4": "Нұрасыл ағай : https://docs.google.com/document/d/13S900yvVCWhTsCWtzuDI2s-AEKmlTE9YX3ffj0myKQc/edit?usp=drivesdk",
     "teacher5": "Жасұлан ағай : https://docs.google.com/document/d/14TEZaiSDpE7uruaJN5wh0fGAsHaRfNGhoLFaZ-UAVmU/edit?usp=drivesdk",
-    "teacher6": "Ботагөз апай : https://docs.google.com/document/d/14SzM7nN4c0tnytBWd8k5pYudDz0YD6cvp4nxAcvUsCQ/edit?usp=drivesdk"
+    "teacher6": "Ботагөз апай : https://docs.google.com/document/d/14SzM7nN4c0tnytBWd8k5pYudDz0YD6cvp4nxAcvUsCQ/edit?usp=drivesdk",
+    "teacher7": "НТ ГУГЛ ДИСК : https://docs.google.com/spreadsheets/d/1yMKy_GbOSO6v-BNzpmZLJqm7gOXGTx6Qli8PPJ1-QYc/edit?usp=sharing"
 }
 
 # --- Функция отправки файлов ---
@@ -226,18 +228,11 @@ def callback(call):
         )
 
     elif call.data == "btn2":
-        bot.edit_message_text(
-            "Чек-лист тақырыбын таңдаңыз ✅:",
-            call.message.chat.id,
-            call.message.message_id,
-            reply_markup=get_checklist_markup()
-        )
-
-    elif call.data.startswith("check_"):
         bot.send_message(
             call.message.chat.id,
-            "Бұл тақырып бойынша чек-лист жақында жүктеледі 📌"
-        )
+            "📁 Чек-листтер сілтемесі:\n\nhttps://drive.google.com/drive/folders/1XDAXnI1E8yh0o8DT6feHCzOJSajxYrnS?usp=drive_link"
+    )
+
 
     elif call.data == "btn5":
         bot.edit_message_text(
