@@ -1,5 +1,7 @@
 import telebot
 import os
+from telebot import types
+import threading
 
 bot = telebot.TeleBot(os.getenv("BOT_TOKEN"))
 
