@@ -207,7 +207,7 @@ def callback(call):
         )
 
     # Кнопки преподавателей
-    elif call.data in ["teacher1","teacher2","teacher3","teacher4","teacher5","teacher6"]:
+    elif call.data in ["teacher1","teacher2","teacher3","teacher4","teacher5","teacher6", "teacher7"]:
         link_text = teacher_links[call.data]
         bot.send_message(call.message.chat.id, link_text)
         bot.send_message(call.message.chat.id, "Мұғалімді таңдаңыз:", reply_markup=get_teachers_markup())
